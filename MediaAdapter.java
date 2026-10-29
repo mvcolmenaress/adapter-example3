@@ -1,6 +1,6 @@
 public class MediaAdapter {
     // The adapter's only job: check the type and return the right player
-    public AdvancedMediaPlayer getPlayer(String mediaType) {
+    public AdvancedMediaPlayer getAdapted(String mediaType) {
         if (mediaType.equalsIgnoreCase("mp3")) {
             return new AudioPlayer();
         } else if (mediaType.equalsIgnoreCase("mp4")) {

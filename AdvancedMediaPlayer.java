@@ -1,3 +1,3 @@
 public interface AdvancedMediaPlayer {
-    void playMedia(String fileName);
+    void play(String fileName);
 }
