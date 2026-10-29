@@ -1,10 +1,8 @@
 public class MediaPlayer implements MusicPlayer {
-    private MediaAdapter mediaAdapter = new MediaAdapter();
-
     @Override
     public void play(String audioType, String fileName) {
         // Get the adapted version of player
-        AdvancedMediaPlayer x = mediaAdapter.getAdapted(audioType);
+        IPlayer x = new MediaAdapter(audioType).getPlayer();
 
         // Play from that adapted instance
         if (x != null) {

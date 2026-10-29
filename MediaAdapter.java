@@ -1,13 +1,23 @@
 public class MediaAdapter {
-    // The adapter's only job: check the type and return the right player
-    public AdvancedMediaPlayer getAdapted(String mediaType) {
-        if (mediaType.equalsIgnoreCase("mp3")) {
-            return new AudioPlayer();
-        } else if (mediaType.equalsIgnoreCase("mp4")) {
-            return new Mp4Player();
-        } else if (mediaType.equalsIgnoreCase("vlc")) {
-            return new VlcPlayer();
+    private static final String MP3 = "mp3";
+    private static final String MP4 = "mp4";
+    private static final String VLC = "vlc";
+
+    IPlayer iPlayer;
+
+    public MediaAdapter(String fileType) {
+        if (fileType.equalsIgnoreCase(MP3)) {
+            iPlayer = new Mp3Player();
         }
-        return null;
+        else if (fileType.equalsIgnoreCase(MP4)) {
+            iPlayer = new Mp4Player();
+        }
+        else if (fileType.equalsIgnoreCase(VLC)) {
+            iPlayer = new VlcPlayer();
+        }
+    }
+
+    public IPlayer getPlayer() {
+        return iPlayer;
     }
 }
