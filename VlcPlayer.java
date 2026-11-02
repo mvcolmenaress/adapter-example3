@@ -1,3 +1,4 @@
+
 public class VlcPlayer implements IPlayer {
     @Override
     public void play(String fileName) {

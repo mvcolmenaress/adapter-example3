@@ -6,14 +6,12 @@ public class MediaAdapter {
     IPlayer iPlayer;
 
     public MediaAdapter(String fileType) {
-        if (fileType.equalsIgnoreCase(MP3)) {
-            iPlayer = new Mp3Player();
-        }
-        else if (fileType.equalsIgnoreCase(MP4)) {
-            iPlayer = new Mp4Player();
-        }
-        else if (fileType.equalsIgnoreCase(VLC)) {
+        if (fileType.equalsIgnoreCase(VLC)) {
             iPlayer = new VlcPlayer();
+        } else if (fileType.equalsIgnoreCase(MP4)) {
+            iPlayer = new Mp4Player();
+        } else if (fileType.equalsIgnoreCase(MP3)) {
+            iPlayer = new Mp3Player();
         }
     }
 
